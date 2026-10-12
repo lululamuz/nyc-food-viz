@@ -2,8 +2,8 @@
 
 // Each cuisine keeps the same color in every borough
 const COLORS = {
-  "American": "#ff4d2e",
-  "Chinese": "#ffd400",
+  "American": "#ffd400",
+  "Chinese": "#ff4d2e",
   "Coffee/Tea": "#b08968",
   "Pizza": "#ff8c1a",
   "Latin American": "#2ed573",
