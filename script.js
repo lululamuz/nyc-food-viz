@@ -179,7 +179,13 @@ function drawChart() {
         },
         // Custom tooltip: count + share of the borough
         tooltip: {
+          usePointStyle: true,
           callbacks: {
+            // show the food photo icon in the tooltip (doughnut view)
+            labelPointStyle: (item) => ({
+              pointStyle: (!isBar && ICONS[item.label]) || "rect",
+              rotation: 0
+            }),
             label: (item) => {
               const pct = ((item.raw / borough.totalRestaurants) * 100).toFixed(1);
               return " " + item.raw.toLocaleString() + " restaurants (" + pct + "%)";
