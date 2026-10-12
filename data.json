@@ -1,0 +1,294 @@
+{
+  "source": "NYC Open Data \u2014 NYCFoodInspectionSimple (sfd3-axrg), downloaded 2026-10-11",
+  "note": "Each restaurant counted once (unique name + street + ZIP). Restaurants without a cuisine listed are excluded.",
+  "boroughs": [
+    {
+      "name": "All NYC",
+      "totalRestaurants": 27320,
+      "distinctCuisines": 90,
+      "top": [
+        {
+          "cuisine": "American",
+          "count": 4772
+        },
+        {
+          "cuisine": "Chinese",
+          "count": 2262
+        },
+        {
+          "cuisine": "Coffee/Tea",
+          "count": 2182
+        },
+        {
+          "cuisine": "Pizza",
+          "count": 1605
+        },
+        {
+          "cuisine": "Latin American",
+          "count": 1118
+        },
+        {
+          "cuisine": "Mexican",
+          "count": 1106
+        },
+        {
+          "cuisine": "Japanese",
+          "count": 1061
+        },
+        {
+          "cuisine": "Italian",
+          "count": 1008
+        },
+        {
+          "cuisine": "Bakery & Desserts",
+          "count": 925
+        },
+        {
+          "cuisine": "Caribbean",
+          "count": 735
+        }
+      ],
+      "otherCount": 10546
+    },
+    {
+      "name": "Manhattan",
+      "totalRestaurants": 10719,
+      "distinctCuisines": 89,
+      "top": [
+        {
+          "cuisine": "American",
+          "count": 2424
+        },
+        {
+          "cuisine": "Coffee/Tea",
+          "count": 1091
+        },
+        {
+          "cuisine": "Italian",
+          "count": 607
+        },
+        {
+          "cuisine": "Japanese",
+          "count": 560
+        },
+        {
+          "cuisine": "Chinese",
+          "count": 543
+        },
+        {
+          "cuisine": "Pizza",
+          "count": 477
+        },
+        {
+          "cuisine": "Bakery & Desserts",
+          "count": 314
+        },
+        {
+          "cuisine": "Mexican",
+          "count": 292
+        },
+        {
+          "cuisine": "French",
+          "count": 228
+        },
+        {
+          "cuisine": "Other",
+          "count": 217
+        }
+      ],
+      "otherCount": 3966
+    },
+    {
+      "name": "Brooklyn",
+      "totalRestaurants": 7011,
+      "distinctCuisines": 83,
+      "top": [
+        {
+          "cuisine": "American",
+          "count": 1052
+        },
+        {
+          "cuisine": "Chinese",
+          "count": 647
+        },
+        {
+          "cuisine": "Coffee/Tea",
+          "count": 607
+        },
+        {
+          "cuisine": "Pizza",
+          "count": 426
+        },
+        {
+          "cuisine": "Caribbean",
+          "count": 340
+        },
+        {
+          "cuisine": "Mexican",
+          "count": 329
+        },
+        {
+          "cuisine": "Japanese",
+          "count": 240
+        },
+        {
+          "cuisine": "Bakery & Desserts",
+          "count": 233
+        },
+        {
+          "cuisine": "Latin American",
+          "count": 224
+        },
+        {
+          "cuisine": "Chicken",
+          "count": 209
+        }
+      ],
+      "otherCount": 2704
+    },
+    {
+      "name": "Queens",
+      "totalRestaurants": 6216,
+      "distinctCuisines": 81,
+      "top": [
+        {
+          "cuisine": "American",
+          "count": 810
+        },
+        {
+          "cuisine": "Chinese",
+          "count": 751
+        },
+        {
+          "cuisine": "Latin American",
+          "count": 481
+        },
+        {
+          "cuisine": "Pizza",
+          "count": 350
+        },
+        {
+          "cuisine": "Coffee/Tea",
+          "count": 342
+        },
+        {
+          "cuisine": "Bakery & Desserts",
+          "count": 267
+        },
+        {
+          "cuisine": "Mexican",
+          "count": 266
+        },
+        {
+          "cuisine": "Caribbean",
+          "count": 227
+        },
+        {
+          "cuisine": "Korean",
+          "count": 196
+        },
+        {
+          "cuisine": "Japanese",
+          "count": 184
+        }
+      ],
+      "otherCount": 2342
+    },
+    {
+      "name": "Bronx",
+      "totalRestaurants": 2395,
+      "distinctCuisines": 58,
+      "top": [
+        {
+          "cuisine": "American",
+          "count": 324
+        },
+        {
+          "cuisine": "Pizza",
+          "count": 249
+        },
+        {
+          "cuisine": "Chinese",
+          "count": 229
+        },
+        {
+          "cuisine": "Latin American",
+          "count": 191
+        },
+        {
+          "cuisine": "Mexican",
+          "count": 163
+        },
+        {
+          "cuisine": "Chicken",
+          "count": 156
+        },
+        {
+          "cuisine": "Spanish",
+          "count": 117
+        },
+        {
+          "cuisine": "Caribbean",
+          "count": 110
+        },
+        {
+          "cuisine": "Coffee/Tea",
+          "count": 88
+        },
+        {
+          "cuisine": "Hamburgers",
+          "count": 82
+        }
+      ],
+      "otherCount": 686
+    },
+    {
+      "name": "Staten Island",
+      "totalRestaurants": 979,
+      "distinctCuisines": 52,
+      "top": [
+        {
+          "cuisine": "American",
+          "count": 162
+        },
+        {
+          "cuisine": "Pizza",
+          "count": 103
+        },
+        {
+          "cuisine": "Chinese",
+          "count": 92
+        },
+        {
+          "cuisine": "Italian",
+          "count": 67
+        },
+        {
+          "cuisine": "Mexican",
+          "count": 56
+        },
+        {
+          "cuisine": "Coffee/Tea",
+          "count": 54
+        },
+        {
+          "cuisine": "Japanese",
+          "count": 46
+        },
+        {
+          "cuisine": "Donuts",
+          "count": 33
+        },
+        {
+          "cuisine": "Frozen Desserts",
+          "count": 31
+        },
+        {
+          "cuisine": "Bakery & Desserts",
+          "count": 31
+        }
+      ],
+      "otherCount": 304
+    }
+  ]
+}
