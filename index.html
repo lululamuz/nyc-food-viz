@@ -4,48 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What Does NYC Eat?</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <p class="eyebrow">NYC Open Data · Restaurant Inspections</p>
-    <h1>What Does NYC Eat?</h1>
-    <p class="lede">Exploring cuisine diversity across the five boroughs. Pick a borough to see which cuisines make up its restaurant scene.</p>
+  <header>
+    <h1>What Does<br>NYC Eat?</h1>
+    <p>The 10 most common restaurant cuisines in each New York City borough.</p>
   </header>
 
   <main>
-    <section class="controls" aria-label="Chart controls">
-      <label for="borough">Borough</label>
+    <div class="controls">
       <select id="borough"></select>
-
-      <div class="toggle" role="group" aria-label="Chart type">
-        <button type="button" data-type="doughnut" class="active">Doughnut</button>
-        <button type="button" data-type="bar">Bar</button>
+      <div class="toggle">
+        <button data-type="doughnut" class="active">Doughnut</button>
+        <button data-type="bar">Bar</button>
       </div>
-    </section>
+    </div>
 
-    <section class="stats" aria-live="polite">
-      <div class="stat"><span id="stat-total">–</span><small>restaurants</small></div>
-      <div class="stat"><span id="stat-cuisines">–</span><small>cuisine types</small></div>
-      <div class="stat"><span id="stat-top">–</span><small>most common</small></div>
-    </section>
+    <div class="chart-wrap">
+      <canvas id="cuisineChart"></canvas>
+    </div>
 
-    <section class="card">
-      <div class="chart-wrap">
-        <canvas id="cuisineChart" aria-label="Chart of top cuisines by borough" role="img"></canvas>
-      </div>
-      <p id="insight" class="insight"></p>
-    </section>
-
-    <section class="notes">
-      <h2>About the data</h2>
-      <p>Source: <a href="https://data.cityofnewyork.us/Health/NYCFoodInspectionSimple/sfd3-axrg" target="_blank" rel="noopener">NYCFoodInspectionSimple</a>, NYC Department of Health and Mental Hygiene, downloaded October 11, 2026. The raw file has one row per inspection or violation (about 297,000 rows), so each restaurant was counted only once (same name, street and ZIP code). Restaurants with no cuisine listed were left out. The chart shows the 10 most common cuisines in each borough, and every other cuisine is grouped into the last slice.</p>
-    </section>
+    <p id="insight" class="insight"></p>
   </main>
 
-  <footer>Built with <a href="https://www.chartjs.org/" target="_blank" rel="noopener">Chart.js</a></footer>
+  <footer>
+    Data: <a href="https://data.cityofnewyork.us/Health/NYCFoodInspectionSimple/sfd3-axrg" target="_blank">NYC Open Data — NYCFoodInspectionSimple</a>, Oct 2026.
+    Each restaurant counted once. Built with Chart.js.
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="script.js"></script>

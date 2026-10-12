@@ -1,15 +1,15 @@
 # What Does NYC Eat? — Exploring Cuisine Diversity Across New York City
 
-**Live site:** https://lululamuz.github.io/nyc-food-viz/
+**Live site:** https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/  ← replace with your GitHub Pages link
 
-An interactive Chart.js visualization of the most common restaurant cuisines in each NYC borough. Choose a borough from the dropdown to update the chart, switch between a doughnut chart and a bar chart, hover over a slice or bar to see the count and percentage, and click legend items to hide or show a cuisine.
+An interactive Chart.js visualization of the most common restaurant cuisines in each NYC borough. Choose a borough from the dropdown to update the chart, switch between a doughnut chart and a bar chart, and hover over a slice or bar to see the count and percentage.
 
 ## Project structure
 
 | File | Purpose |
 |---|---|
-| `index.html` | Page layout: title, controls, stat cards, chart canvas, data notes. Loads Chart.js from the jsDelivr CDN. |
-| `style.css` | Page styling (colors, fonts, cards, toggle buttons, mobile layout). |
+| `index.html` | Page layout: title, controls, chart canvas, insight line, data source. Loads Chart.js from the jsDelivr CDN. |
+| `style.css` | Page styling: black background, white text, bold uppercase headline (Inter Tight from Google Fonts), mobile layout. |
 | `script.js` | Loads `data.json`, fills the borough dropdown, and draws and redraws the Chart.js chart. |
 | `data.json` | Processed dataset: top 10 cuisines + "all other" count for All NYC and each of the 5 boroughs. |
 | `prepare_data.py` | Python/pandas script that turns the raw CSV into `data.json`. |
@@ -21,8 +21,7 @@ An interactive Chart.js visualization of the most common restaurant cuisines in 
 - **Borough dropdown** to filter the data (All NYC, Manhattan, Brooklyn, Queens, Bronx, Staten Island)
 - **Chart type toggle** (doughnut ↔ bar)
 - **Custom tooltips** showing the restaurant count and its share of the borough
-- **Clickable legend** to hide or show cuisines
-- Stat cards and a short insight for each borough
+- A one-sentence insight for each borough
 - Each cuisine keeps the same color in every borough, so boroughs are easy to compare
 
 ## Dataset
