@@ -72,7 +72,5 @@ Possible Chart.js features: scatter chart, linear axes, and hover tooltips.
 - **AI tools**: I used AI mainly when I got stuck on specific parts of the project, especially while debugging some of the JavaScript and figuring out why the chart was not running correctly. I also used it near the end to help troubleshoot a few final issues with the page and Chart.js behavior. The main design decisions, dataset choice, layout, and overall direction were developed by me.
 
 Example prompts included:
-- “Why is my Chart.js chart not updating when I change the borough?”
-- “Can you help me figure out why this part of my JavaScript is not running?”
-- “My chart works in one view but breaks when I switch chart types. What could be causing this?”
-- “Can you help me debug the final layout and chart loading issues?”
+- “why is my chart.js chart not updating when i change the borough?”
+- “can u help me debug the final layout and chart loading issues?”
