@@ -1,6 +1,6 @@
 # What Does NYC Eat? — Exploring Cuisine Diversity Across New York City
 
-**Live site:** https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/  ← replace with your GitHub Pages link
+**Live site:** https://lululamuz.github.io/nyc-food-viz/
 
 An interactive Chart.js visualization of the most common restaurant cuisines in each NYC borough. Choose a borough from the dropdown to update the chart, switch between a doughnut chart and a bar chart, hover over a slice or bar to see the count and percentage, and click legend items to hide or show a cuisine.
 
