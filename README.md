@@ -1,6 +1,6 @@
 # What Does NYC Eat? — Exploring Cuisine Diversity Across New York City
 
-**Live site:** https://lululamuz.github.io/nyc-food-viz/
+**Live site:** https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/  ← replace with your GitHub Pages link
 
 An interactive Chart.js visualization of the most common restaurant cuisines in each NYC borough. Choose a borough from the dropdown to update the chart, switch between a doughnut chart and a bar chart, hover over a slice or bar to see the count and percentage, and click legend items to hide or show a cuisine.
 
@@ -13,7 +13,7 @@ An interactive Chart.js visualization of the most common restaurant cuisines in 
 | `script.js` | Loads `data.json`, fills the borough dropdown, and draws and redraws the Chart.js chart. |
 | `data.json` | Processed dataset: top 10 cuisines + "all other" count for All NYC and each of the 5 boroughs. |
 | `prepare_data.py` | Python/pandas script that turns the raw CSV into `data.json`. |
-| `sketches/` | Phase 1 sketches. |
+| `sketches/sketches.jpg` | Phase 1 sketches (all 3 in one image). |
 
 ## Features
 
@@ -38,20 +38,19 @@ I chose the NYC restaurant inspection dataset because food is one of the easiest
 
 ### Sketches
 
-<!-- TODO: add photos/screenshots of your 3 sketches to the sketches/ folder and update the file names below -->
+All three sketches are in one image:
+
+![Phase 1 sketches](sketches/sketches.jpg)
 
 **Sketch 1: Bar chart, Top 10 cuisines in NYC**
-![Sketch 1](sketches/sketch1.jpg)
 X-axis: cuisine type. Y-axis: number of restaurants.
 Chart.js features: `bar` chart type, axis titles (`scales.x.title`, `scales.y.title`), hover tooltips, chart title plugin.
 
 **Sketch 2: Doughnut chart, Cuisine distribution by borough** ← *developed in Phase 2*
-![Sketch 2](sketches/sketch2.jpg)
 A dropdown switches between the five boroughs.
 Chart.js features: `doughnut` chart type, legend plugin, `chart.destroy()` / redraw when the dropdown changes, custom tooltip callbacks.
 
 **Sketch 3: Scatter plot, Restaurant count vs. cuisine diversity by ZIP code**
-![Sketch 3](sketches/sketch3.jpg)
 Each point is a ZIP code. X-axis: number of restaurants. Y-axis: number of different cuisine types.
 Chart.js features: `scatter` chart type, linear axes with titles, tooltip callbacks that show the ZIP code.
 
