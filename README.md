@@ -13,6 +13,7 @@ An interactive Chart.js visualization of the most common restaurant cuisines in 
 | `script.js` | Loads `data.json`, fills the borough dropdown, and draws and redraws the Chart.js chart. |
 | `data.json` | Processed dataset: top 10 cuisines + "all other" count for All NYC and each of the 5 boroughs. |
 | `prepare_data.py` | Python/pandas script that turns the raw CSV into `data.json`. |
+| `images/` | Round food photos (transparent PNGs) used to fill the doughnut slices. |
 | `sketches/sketches.jpg` | Phase 1 sketches (all 3 in one image). |
 
 ## Features
@@ -20,6 +21,7 @@ An interactive Chart.js visualization of the most common restaurant cuisines in 
 - **Chart.js chart** with a title, axis labels (bar view), and a legend
 - **Borough dropdown** to filter the data (All NYC, Manhattan, Brooklyn, Queens, Bronx, Staten Island)
 - **Chart type toggle** (doughnut ↔ bar)
+- **Food-photo doughnut**: a small custom Chart.js plugin fills each slice with its wedge of a round food photo (the legend shows the photos as icons)
 - **Custom tooltips** showing the restaurant count and its share of the borough
 - A one-sentence insight for each borough
 - Each cuisine keeps the same color in every borough, so boroughs are easy to compare
@@ -55,10 +57,13 @@ Chart.js features: `scatter` chart type, linear axes with titles, tooltip callba
 
 ## External resources & AI use
 
+- **Food photos**: <!-- TODO: list where each photo came from (site name / link) -->
 - **Chart.js documentation** (https://www.chartjs.org/docs/latest/): doughnut and bar chart options, legend `generateLabels`, tooltip callbacks.
 - **NYC Open Data** column descriptions for the dataset.
 - **Claude (Anthropic)**: <!-- TODO: edit this to match exactly what you used it for -->
-  - Used for: cleaning and summarizing the CSV (`prepare_data.py`), writing the first draft of `index.html`, `style.css` and `script.js`, and drafting this README. I then reviewed, tested and edited the code and text.
+  - Used for: cleaning and summarizing the CSV (`prepare_data.py`), cutting the food photos into round PNGs, the photo-slice plugin, writing the first draft of `index.html`, `style.css` and `script.js`, and drafting this README. I then reviewed, tested and edited the code and text.
   - Example prompts:
     - "I'm working on Assignment 2: Data Visualization using Chart.js. I decided to use the NYCFoodInspectionSimple dataset… I am leaning toward something with a borough dropdown/filter."
     - "Help me build the index.html, script.js, style.css and README for the doughnut chart with a borough dropdown."
+    - "Make the design black background with white text and a modern font."
+    - "Can each part of the doughnut chart be replaced with a slice of a round food photo?"

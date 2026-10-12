@@ -33,6 +33,68 @@ const INSIGHTS = {
   "Staten Island": "Staten Island has the fewest cuisine types of any borough (52)."
 };
 
+// Food photos for the doughnut slices (round PNGs in the images/ folder).
+// Cuisines without a photo keep their color.
+const PHOTO_FILES = {
+  "American": "american.png",                // burger patty
+  "Chinese": "chinese.png",                  // noodles
+  "Coffee/Tea": "coffee-tea.png",            // iced latte
+  "Pizza": "pizza.png",                      // pepperoni pizza
+  "Italian": "italian.png",                  // salami
+  "Bakery & Desserts": "bakery-desserts.png",// donut
+  "Latin American": "latin-american.png",    // tomato
+  "Mexican": "mexican.png",                  // red onion
+  "Japanese": "japanese.png",                // cucumber
+  "Caribbean": "caribbean.png",              // kiwi
+  "All other cuisines": "all-other-cuisines.png" // empty plate
+};
+const PHOTOS = {}; // full photos for the slices
+const ICONS = {};  // small round versions for the legend
+
+Object.keys(PHOTO_FILES).forEach((cuisine) => {
+  const img = new Image();
+  img.onload = () => {
+    PHOTOS[cuisine] = img;
+    // make a 16px icon for the legend
+    const icon = document.createElement("canvas");
+    icon.width = icon.height = 16;
+    icon.getContext("2d").drawImage(img, 0, 0, 16, 16);
+    ICONS[cuisine] = icon;
+    if (chart) chart.update(); // redraw once the photo has loaded
+  };
+  img.src = "images/" + PHOTO_FILES[cuisine];
+});
+
+// Chart.js plugin: fill each doughnut slice with its slice of a round food photo.
+// The photo is centered on the doughnut, so each slice shows a "wedge" of it.
+const photoSlices = {
+  id: "photoSlices",
+  afterDatasetDraw(chart) {
+    if (chart.config.type !== "doughnut") return;
+    const ctx = chart.ctx;
+    chart.getDatasetMeta(0).data.forEach((arc, i) => {
+      const img = PHOTOS[chart.data.labels[i]];
+      if (!img || !chart.getDataVisibility(i)) return;
+      const { x, y, startAngle, endAngle, innerRadius, outerRadius } = arc.getProps(
+        ["x", "y", "startAngle", "endAngle", "innerRadius", "outerRadius"], true);
+      ctx.save();
+      // cut out the slice shape
+      ctx.beginPath();
+      ctx.arc(x, y, outerRadius, startAngle, endAngle);
+      ctx.arc(x, y, innerRadius, endAngle, startAngle, true);
+      ctx.closePath();
+      ctx.clip();
+      // draw the whole photo, sized to the doughnut, inside that slice
+      ctx.drawImage(img, x - outerRadius, y - outerRadius, outerRadius * 2, outerRadius * 2);
+      // black outline between slices
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#000";
+      ctx.stroke();
+      ctx.restore();
+    });
+  }
+};
+
 const select = document.getElementById("borough");
 const buttons = document.querySelectorAll(".toggle button");
 let data, chart;
@@ -76,6 +138,7 @@ function drawChart() {
 
   chart = new Chart(document.getElementById("cuisineChart"), {
     type: chartType,
+    plugins: [photoSlices],
     data: {
       labels: labels,
       datasets: [{
@@ -83,7 +146,8 @@ function drawChart() {
         data: values,
         backgroundColor: colors,
         borderColor: "#000",
-        borderWidth: 2
+        borderWidth: 2,
+        cutout: "35%"
       }]
     },
     options: {
@@ -101,13 +165,15 @@ function drawChart() {
           position: window.innerWidth < 600 ? "bottom" : "right",
           onClick: null, // legend is for reading only
           labels: {
-            boxWidth: 12,
-            // show one legend item per cuisine, also in bar mode
+            usePointStyle: true,
+            padding: 12,
+            // one legend item per cuisine: photo icon on the doughnut, color square on the bar chart
             generateLabels: () => labels.map((text, i) => ({
               text: text,
               fillStyle: colors[i],
               strokeStyle: colors[i],
-              fontColor: "#fff"
+              fontColor: "#fff",
+              pointStyle: (!isBar && ICONS[text]) || "rect"
             }))
           }
         },
